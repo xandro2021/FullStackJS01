@@ -1,6 +1,7 @@
 {
   "name": "apv-backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Aprendiendo JS FullStack",
   "main": "index.js",
   "scripts": {
@@ -10,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

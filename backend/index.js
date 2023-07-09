@@ -4,6 +4,9 @@ import conectarDB from './config/db.js';
 import veterinarioRoutes from './routes/veterinarioRoutes.js';
 
 const app = express();
+// Necesario para enviar datos desde postman al servidor (POST)
+app.use(express.json());
+
 dotenv.config();
 
 conectarDB();

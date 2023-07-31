@@ -6,7 +6,7 @@ const pacienteSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    Propietario: {
+    propietario: {
       type: String,
       required: true,
     },
@@ -17,6 +17,7 @@ const pacienteSchema = mongoose.Schema(
     fecha: {
       type: Date,
       required: true,
+      default: Date.now(),
     },
     sintomas: {
       type: String,

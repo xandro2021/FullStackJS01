@@ -1,7 +1,6 @@
 // Outlet es necesario para poder inyectar contenido de Route hijo (Login)
 import { Outlet } from 'react-router-dom';
 
-
 const AuthLayout = () => {
   return (
     <>

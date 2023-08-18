@@ -5,14 +5,18 @@ const AuthContext = createContext();
 
 const AuthProvider = (props) => {
   const { children } = props;
+  // State extra para evitar error que tarda en cargar el token impidiendo entrar /admin
+  const [cargando, setCargando] = useState(true);
   const [auth, setAuth] = useState({});
 
   useEffect(() => {
-
     const autenticarUsuario = async() => {
       const token = localStorage.getItem('token');
 
-      if (!token) return;
+      if (!token) {
+        setCargando(false);
+        return;
+      }
 
       const config = {
         headers: {
@@ -31,6 +35,9 @@ const AuthProvider = (props) => {
         console.log(error.response.data.msg);
         setAuth({});
       }
+
+      setCargando(false);
+
     };
 
     autenticarUsuario();
@@ -41,7 +48,8 @@ const AuthProvider = (props) => {
     <AuthContext.Provider
       value={{
         auth,
-        setAuth
+        setAuth,
+        cargando
       }}
     >
       { children }

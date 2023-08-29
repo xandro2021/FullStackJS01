@@ -81,6 +81,10 @@ const AuthProvider = (props) => {
 
   };
 
+  const guardarPassword = async (datos) => {
+
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -89,6 +93,7 @@ const AuthProvider = (props) => {
         cargando,
         cerrarSesion,
         actualizarPerfil,
+        guardarPassword,
       }}
     >
       {children}
